@@ -41,6 +41,8 @@ RUN set -x \
  	&& ln -s "${STEAMCMDDIR}/linux64/steamclient.so" "/usr/lib/x86_64-linux-gnu/steamclient.so" \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN ldd --version
+
 FROM build_stage AS bookworm-root
 WORKDIR ${STEAMCMDDIR}
 
